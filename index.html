@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="stylev.css">
+    <link rel="shortcut icon" href="img/Icon 2.png" type="image/x-icon">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</head>
+<body>
+    <nav class="menu">
+        <div class="navegacao">
+            <a href="https://autplay.framer.website/">Sobre</a>
+            <a href="https://autplay.framer.website/Alunos">Aluno</a>
+            <a href="https://autplay.framer.website/Professor">Professor</a>
+            <a href="https://autplay.framer.website/Pais">Pais</a>
+            <a href="https://autplay.framer.website/Doa%C3%A7%C3%A3o">Doação</a>
+        </div>
+        <div class="logo">
+            <img src="img/Logo sem slogan.png" alt="Logo do Projeto" />
+        </div>
+        <div class="acessibilidade">
+            <button id="zoom">🔍 Zoom</button>
+            <button id="alto-contraste">🔳 Alto Contraste</button>
+            <button id="escala-cinza">⚫ Escala de Cinza</button>
+        </div>
+    </nav>
+    <main>
+        <h1>JOGO DA VELHA</h1>
+        <div class="game">
+            <button data-i="1"></button>
+            <button data-i="2"></button>
+            <button data-i="3"></button>
+            <button data-i="4"></button>
+            <button data-i="5"></button>
+            <button data-i="6"></button>
+            <button data-i="7"></button>
+            <button data-i="8"></button>
+            <button data-i="9"></button>
+        </div>
+        <h2 class="currentPlayer"></h2>
+        <div class="message" id="message"></div>
+
+        <!-- Modais de Vitória, Derrota e Empate -->
+        <div id="parabensModal" class="modal">
+            <h2>Parabéns!</h2>
+            <p>Você concluiu a sua missão! 😎</p>
+            <button onclick="init()">JOGAR NOVAMENTE</button>
+        </div>
+
+        <div id="falhaModal" class="modal">
+            <h2>Você perdeu!</h2>
+            <p>Jogue novamente! 😔</p>
+            <button onclick="init()">JOGAR NOVAMENTE</button>
+        </div>
+
+        <div id="empateModal" class="modal">
+            <h2>Deu Empate!</h2>
+            <p>Tente novamente! 😕</p>
+            <button onclick="init()">JOGAR NOVAMENTE</button>
+        </div>
+    </main>
+
+    <audio id="musicaDeFundo" loop>
+        <source src="img/chill-lofi-160893.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <button id="muteButton">🔊</button>
+
+    <script src="jogodavelha.js"></script>
+</body>
+</html>
